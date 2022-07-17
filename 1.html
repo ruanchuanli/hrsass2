@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script>
+       var list = [
+        { id: 1, name: "冰箱", pid: "" },
+        { id: 2, name: "海尔冰箱", pid: 1 },
+        { id: 3, name: "美的冰箱", pid: 1 },
+        { id: 4, name: "电视", pid: "" },
+        { id: 5, name: "小米电视", pid: 4 },
+        { id: 6, name: "小米电视EA Pro 55英寸", pid: 5 },
+        { id: 7, name: "小米电视EA55 2022款", pid: 5 },
+      ];
+      // let list1=[]
+      // list.forEach((item)=>{
+      //   if(item.pid===''){
+      //     list1.push(item)
+      //     item.children=[]
+      //     list.forEach((item1)=>{
+      //       if(item.id===item1.pid){
+      //         item.children.push(item1)
+      //       }
+      //     })
+      //   }
+      // })
+      // console.log(list1);
+
+      function fn(list,pid){
+        const arr=[]
+        list.forEach((item)=>{
+          if(item.pid===pid){
+            arr.push(item)
+            item.children=fn(list,item.id)
+          }
+        })
+        return arr
+      }
+      console.log(fn(list,''));
+    </script> -->
+    <canvas></canvas>
+  </body>
+</html>

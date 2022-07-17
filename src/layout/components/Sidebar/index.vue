@@ -1,5 +1,5 @@
 <template>
-  <div :class="{'has-logo':showLogo}">
+  <div :class="{ 'has-logo': showLogo }">
     <logo v-if="showLogo" :collapse="isCollapse" />
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
@@ -12,7 +12,12 @@
         :collapse-transition="false"
         mode="vertical"
       >
-        <sidebar-item v-for="route in routes" :key="route.path" :item="route" :base-path="route.path" />
+        <sidebar-item
+          v-for="route in routes"
+          :key="route.path"
+          :item="route"
+          :base-path="route.path"
+        />
       </el-menu>
     </el-scrollbar>
   </div>
@@ -27,9 +32,7 @@ import variables from '@/styles/variables.scss'
 export default {
   components: { SidebarItem, Logo },
   computed: {
-    ...mapGetters([
-      'sidebar'
-    ]),
+    ...mapGetters(['sidebar']),
     routes() {
       return this.$router.options.routes
     },
@@ -54,3 +57,39 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+::v-deep .scrollbar-wrapper {
+  background: url("~@/./assets/common/leftnavBg.png") no-repeat 0 100%;
+}
+::v-deep .el-menu {
+  border: none;
+  height: 100%;
+  width: 100% !important;
+  a {
+    li {
+      .svg-icon {
+        color: #fff;
+        font-size: 18px;
+        vertical-align: middle;
+        .icon {
+          color: #fff;
+        }
+      }
+      span {
+        color: #fff;
+      }
+      &:hover {
+        .svg-icon {
+          color: #43a7fe;
+        }
+        span {
+          color: #43a7fe;
+        }
+      }
+    }
+  }
+}
+::v-deep .el-menu-item .is-active .submenu-title-noDropdown{
+  color: #fff;
+}
+</style>
